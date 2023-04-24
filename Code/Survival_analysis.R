@@ -1,33 +1,38 @@
-# Libraries
+# 0. Libraries
 library(survminer)
 library(survival)
 
-# Verify assumptions
-## Fit a survival object for the log-rank test
-surv.obj <- Surv(clean_data$days_lasted, 
-                 clean_data$status)
+# 1. Load data
+load(raw_data, 
+     file = 'Results/Results.Rdata')
 
-## Check the proportional hazards assumption
-cox.ph <- coxph(surv.obj ~ cluster, 
-                data = clean_data)
-summary(cox.ph)
+# 2. Verify assumptions
+## 2.1 Proportional hazards assumption
+    surv.obj <- Surv(clean_data$days_lasted, 
+                     clean_data$status) # Fit a survival object for the log-rank test
+    
+    
+    cox.ph <- coxph(surv.obj ~ cluster, 
+                    data = clean_data)
+    
+    
+    summary(cox.ph)
 
-## Check the assumption of non-informative censoring
-cox.zph <- cox.zph(cox.ph)
-ggcoxzph(cox.zph)
-print(cox.zph)
+## 2.2 Non-informative censoring
+    cox.zph <- cox.zph(cox.ph)
+    ggcoxzph(cox.zph)
+    print(cox.zph)
 
 ## Run the log-rank test
 surv.test <- survdiff(surv.obj ~ cluster, 
                       data = clean_data)
 print(surv.test)
 
-## Survival analysis
+## 3. Survival analysis
 
 surv_object <- survfit(Surv(days_lasted, status)~cluster, 
                        data = clean_data)
 
-# Run analysis
 ggsurvplot(
     fit = surv_object,
     data = clean_data,
@@ -45,6 +50,6 @@ ggsurvplot(
     risk.table.height = 0.25, # Useful to change when you have multiple groups
     ggtheme = theme(panel.background = element_blank())      # Change ggplot2 theme
     )  +
-labs(fill = "Previous Season Viewership",
-     color = "Previous Season Viewership")  # Change legend title
+  labs(fill = "Previous Season Viewership",
+       color = "Previous Season Viewership")  # Change legend title
 
