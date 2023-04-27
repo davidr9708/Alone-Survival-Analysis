@@ -29,7 +29,7 @@ The cluster analysis split the seasons into two groups depending on the previous
 - High viewership: 2, 3, 4
 - Low viewership: 5, 6, 7, 8, 9
 
-![Survival_analysis.png]
+![](Survival_analysis.png)
 
 ## 5. Next steps
 - Assess whether the reporting process in the **low crime rates cluster** generates understimated crime rates, and fix it if it does.
