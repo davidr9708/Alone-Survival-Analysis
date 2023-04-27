@@ -12,11 +12,17 @@ survivalists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascien
         summarise(Median_viewers = median(viewers, na.rm = TRUE)) %>% 
         filter(!is.na(Median_viewers)) %>% 
         ungroup()
-
+    
+    
+    distinct_df <- distinct(survivalists %>% filter(season == 4), 
+                            team, 
+                            .keep_all = TRUE)
+     
 ## 1.2 Scale data
     scaled_data <- scale(all_seasons[,2]) 
-
+    
 ## 1.3 Find Clusters for viewers
+    set.seed(1254)
     k_clusters <- 2
     kmeans_result <- kmeans(x = scaled_data, 
                             algorithm = "Hartigan-Wong",
@@ -55,6 +61,8 @@ survivalists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascien
       
 ## 1.4 Joining season and survivalists data
     clean_data <- survivalists %>% 
+      filter(season != 4) %>% 
+      rbind(distinct_df) %>%
         select(season, 
                days_lasted, 
                reason_category
@@ -64,7 +72,7 @@ survivalists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascien
                                1
                                ), 
                .keep = "unused"
-               ) %>%
+               )  %>%
         inner_join(all_seasons, 
                    by = "season"
                    )

@@ -33,7 +33,7 @@ print(surv.test)
 surv_object <- survfit(Surv(days_lasted, status)~cluster, 
                        data = clean_data)
 
-ggsurvplot(
+plot <- ggsurvplot(
     fit = surv_object,
     data = clean_data,
     size = 1,                 # change line size
@@ -50,6 +50,19 @@ ggsurvplot(
     risk.table.height = 0.25, # Useful to change when you have multiple groups
     ggtheme = theme(panel.background = element_blank())      # Change ggplot2 theme
     )  +
-  labs(fill = "Previous Season Viewership",
-       color = "Previous Season Viewership")  # Change legend title
+    labs(fill = "Previous Season Viewership",
+         color = "Previous Season Viewership")  # Change legend title
+
+
+# 3. Export plot
+if (!file.exists("Results")) {
+  # Create a new directory if it doesn't exist
+  dir.create("Results")
+  cat("Directory created successfully.\n")
+} else {
+  cat("Directory already exists.\n")
+} # Verify the existence of the directory
+
+ggsave("Results/Survival_analysis.png", plot = plot$plot,
+       width = 6, height = 4, dpi = 300,) # Save plot
 
