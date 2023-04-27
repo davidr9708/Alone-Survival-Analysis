@@ -26,19 +26,18 @@ Applied a Log-rank test to compare the group with high viewership against the lo
 
 ## 4. Results and interpretation
 The cluster analysis split the seasons into two groups depending on the previous season viewership:
-- High viewership: 2, 3, 4
-- Low viewership: 5, 6, 7, 8, 9
+- High viewership: seasons 2, 3, 4
+- Low viewership: seasons 5, 6, 7, 8, 9
 
 ![](Survival_analysis.png)
 
-## 5. Next steps
-- Assess whether the reporting process in the **low crime rates cluster** generates understimated crime rates, and fix it if it does.
-- Run a further analysis to identify why the **high crime rates cluster** has higher crime rates, this will help to identify the causes of the problem and invest effectively the public resources in programs that will solve the problematic.
+Tbere's not enough evidence to assure the pevious season viewership influence the survival rate. 
+
+## 5. Relevance
+- 
 
 ## 6. Limitations
-- Survival bias: The analysis didn't analyse trends, only one snapshot at the time.
+- Sample size: The analysis didn't analyse trends, only one snapshot at the time.
 
-## 7. Warning
-The scenario proposed is hypothetical, designed to develop analytical skills applied in a real scenario.
 
 
