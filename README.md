@@ -10,7 +10,13 @@
 7. Warning 
 
 ## 1. Hypothetical Scenario
-[Alone](https://en.wikipedia.org/wiki/Alone_(TV_series)) is a well known american survival show. I wondered about the sucess of the previous season might influence the decisions for the show and to reduce or increase the survival rate.
+[Alone](https://en.wikipedia.org/wiki/Alone_(TV_series)) is a well known american survival show. I wondered about whether intentionally took decisions to reduce or increase the survival rate based on the previous season viewership. This is relevant because it might show whether the show might be fake (if they can alter easily the survival rate, it might mean the rules are not what the show says)  
+
+**Hypotheses:**
+- A fake show will would be able to alter easily the survival rate based on the previous season viewership.
+
+**Assumption:**
+- Survival rate influences higher or lower views in the current season.
 
 ## 2. Question
 Is **the previous Season Viewership** associated with the survival rate of the season?
@@ -31,13 +37,9 @@ The cluster analysis split the seasons into two groups depending on the previous
 
 ![](Survival_analysis.png)
 
-Tbere's not enough evidence to assure the pevious season viewership influence the survival rate. 
+The Log-rank test tell shows a p-value of 0.96, it means there's not enough evidence to assure seasons with the highest viewership have a different survival rate to the group with the lowest viewership in their previous seson.  
 
 ## 5. Relevance
-- 
-
-## 6. Limitations
-- Sample size: The analysis didn't analyse trends, only one snapshot at the time.
-
+In this case, negative results are equal important to positive results. The results shows that there's not evidence to say the show is fake due to its survival rates didn't show a changed based on the the previous season viewership. However, I didn't measure other variables that are also reated to the decision made for the show,additionaly, I assumed the survival rates 
 
 
