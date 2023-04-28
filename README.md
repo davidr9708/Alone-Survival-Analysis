@@ -40,6 +40,5 @@ The cluster analysis split the seasons into two groups depending on the previous
 The Log-rank test tell shows a p-value of 0.96, it means there's not enough evidence to assure seasons with the highest viewership have a different survival rate to the group with the lowest viewership in their previous seson.  
 
 ## 5. Relevance
-In this case, negative results are equal important to positive results. The results shows that there's not evidence to say the show is fake due to its survival rates didn't show a changed based on the the previous season viewership. However, I didn't measure other variables that are also reated to the decision made for the show,additionaly, I assumed the survival rates 
-
+In this case, negative results are equal important to positive results. The results shows that there's not evidence to say the show is fake due to its survival rates didn't show a changed based on the the previous season viewership. However, I didn't measure other variables that are also reated to the decision made for the show.
 
